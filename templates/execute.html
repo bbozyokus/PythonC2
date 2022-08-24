@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+    {% block content %}
+        <body>
+            <form action="http://127.0.0.1:5000/{{name}}/execute" method="POST">
+                <div class="column">
+                    <p class="subtitle is-5">Execute commands: </p>
+                </div>
+                    <div class="column is-two-fifths-desktop is-5">
+                        <input class="input is-focused is-danger is-normal is-rounded" type="text" name="command" autofocus placeholder="Commands...">        
+                </div>
+                <div class="column is-one-quarter is-6"> 
+                    <input type="submit" class="button is-danger is-rounded" value="Execute">
+                </div>
+            </form> 
+
+            <div class="column is-three-fifths is-6">
+                <p class="subtitle is-5">Output: </p>
+                <div class="control is-large">
+                    <pre><textarea rows="20" class="textarea" readonly>{{ cmdoutput }}</textarea></pre>
+                </div>
+            </div>
+        </body>
+    {% endblock %}

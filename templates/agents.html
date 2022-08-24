@@ -1,0 +1,10 @@
+
+{% extends 'index.html' %}
+    {% block content %}
+        <h1 class="title is-3">List of Sessions & Agents: </h1>
+            {% for i in threads %}
+        <a href="http://127.0.0.1:5000/{{i.name}}/executecmd" >
+            <button class="button is-dark">{{ i.name }}</button>
+        </a>
+    {% endfor %}
+{% endblock %}
